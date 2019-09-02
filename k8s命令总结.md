@@ -147,8 +147,7 @@
         kubectl get cs
 
 + 新建/删除namespace
-            
-        kubectl create namespace {namespace-name}
+      kubectl create namespace {namespace-name}
         kubectl delete namespace {namespace-name}
 
 ### 2.2 资源相关
@@ -193,67 +192,67 @@
 
 #### 2.2.2 deployment
 
-查看deployment列表
+- 查看deployment列表
 
-```
-kubectl get deployments -n {namespace-name} -o wide
-```
+  ```
+  kubectl get deployments -n {namespace-name} -o wide
+  ```
 
-+ 使用命令直接创建创建deployment
+- 使用命令直接创建创建deployment
 
         kubectl run {deployment-name} --image={repository:tag} --replicas={replicas-num}
 
-+ 使用yaml创建deployment
-  
-  ```
+- 使用yaml创建deployment
+
+    ```
     kubectl create -f {yaml-name}.yaml
-  ```
-  
-+ 删除deployment
-  
+    ```
+
+- 删除deployment
+
         kubectl delete deployment {deployment-name}
 
-+ 查看所有deployment**
+- 查看所有deployment**
 
         kubectl get deployment
 
-+ 查看deployment详细信息
+- 查看deployment详细信息
 
         kubectl describe deployment {deployment-name}
 
-+ 运行某个deployment为对外服务
+- 运行某个deployment为对外服务
 
         kubectl expose deployment {depoloyment-name} -n {namespace-name} --type=NodePort --port={port}
 
-+ 查看replicaset
-  
-  ```
+- 查看replicaset
+
+    ```
     kubectl get rs
-  ```
-  
-+ 查看replicaset详细信息
+    ```
+
+- 查看replicaset详细信息
 
         kubectl describe rs {replicaset-name}
 
-+ deployment扩容/缩容
-  
-  ```
+- deployment扩容/缩容
+
+    ```
     kubectl scale deployment nginx --replicas={replicas-num}
-  ```
-  
-+ deployment升级/回滚
+    ```
+
+- deployment升级/回滚
 
         kubectl set image deploy {deployment-name} {deployment-name}={repository:tag}
 
-+ 查看升级状态
+- 查看升级状态
 
         kubectl rollout status deployment {deployment-name}
 
-+ 查看升级历史
+- 查看升级历史
 
         kubectl rollout history deployment {deployment-name}
 
-+ 查看历史版本详情
+- 查看历史版本详情
 
         kubectl rollout history deployment {deployment-name} --revision=2
 
@@ -284,7 +283,7 @@ kubectl get deployments -n {namespace-name} -o wide
     kubectl get endpoints
   ```
   
-+ 查看Yaml语法**
++ 查看yaml语法
       kubectl explain pod
         kubectl explain pod.spec \| grep -i "containers" 
     
