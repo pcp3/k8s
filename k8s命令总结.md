@@ -147,8 +147,11 @@
         kubectl get cs
 
 + 新建/删除namespace
-      kubectl create namespace {namespace-name}
-        kubectl delete namespace {namespace-name}
+  
+  ```
+  kubectl create namespace {namespace-name}
+  kubectl delete namespace {namespace-name}
+  ```
 
 ### 2.2 资源相关
 ####  2.2.1 pod
@@ -280,13 +283,16 @@
 + 查看endpoint**
   
   ```
-    kubectl get endpoints
+  kubectl get endpoints
   ```
   
 + 查看yaml语法
-      kubectl explain pod
-        kubectl explain pod.spec \| grep -i "containers" 
-    
+  
+  ```
+  kubectl explain pod
+  kubectl explain pod.spec \| grep -i "containers" 
+  ```
+  
 + 检验yarm语法
 
         kubectl create -f {yaml-name}.yaml --validate
