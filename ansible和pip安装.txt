@@ -1,0 +1,9 @@
+1、安装ansible
+	yum install -y ansible
+
+2、安装pip
+	 easy_install pip
+	 
+3、pip install -i https://pypi.douban.com/simple  scrapy
+	sudo  pip3 install pyasn1-modules
+	pip install -i https://pypi.douban.com/simple  scrapy
