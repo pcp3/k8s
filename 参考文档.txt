@@ -1,0 +1,48 @@
+Rancher
+官方部署文档
+https://rancher.com/docs/rancher/v1.6/zh/installing-rancher/installing-server/
+
+https://hub.docker.com/r/rancher/rancher/tags/
+
+其它优秀文档
+https://www.cnblogs.com/whuanle/p/10228999.html
+
+https://blog.51cto.com/13941177/2165668
+
+https://blog.csdn.net/aixiaoyang168/article/details/88600530
+
+
+
+国内镜像源
+Azure镜像源
+地址统一为：{国内代理地址}/{repo-name}/{image-name}:{version}
+
+国外地址	国内代理	示例
+docker.io	dockerhub.azk8s.cn	dockerhub.azk8s.cn/library/nginx:1.15
+gcr.io	gcr.azk8s.cn	gcr.azk8s.cn/google_containers/hyperkube-amd64:v1.13.5
+k8s.gcr.io	gcr.azk8s.cn/google-containers	
+quay.io	quay.azk8s.cn	quay.azk8s.cn/deis/go-dev:v1.10.0
+阿里云镜像源
+Yum源配置
+vi /etc/yum.repos.d/kubernetes.repo
+
+[kubernetes]
+
+name=Kubernetes
+
+baseurl=https://mirrors.aliyun.com/kubernetes/yum/repos/kubernetes-el7-x86_64/
+
+enabled=1
+
+gpgcheck=1
+
+repo_gpgcheck=1
+
+gpgkey=https://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg https://mirrors.aliyun.com/kubernetes/yum/doc/rpm-package-key.gpg
+
+Docker源配置
+tee>/etc/docker/daemon.json<<EOF
+
+{ "registry-mirrors": ["https://xwx6wxd1.mirror.aliyuncs.com"] }
+
+EOF
